@@ -1,0 +1,29 @@
+<div class="menu">
+	<%= link_to "cerrar sesión", destroy_nodriza_admin_session_path, method: :delete, :class => 'waves-effect waves-light btn  grey darken-3'%>
+</div>
+<h1 class="titulo color-naranjo">Registros</h1>
+
+<table class="tabla highlight">
+  <thead>
+    <tr>
+      <th data-field="id">id</th>
+      <th data-field="nombre">Nombre</th>
+      <th data-field="email">email</th>
+      <th data-field="telefono">telefono</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forms.each do |form| %>
+      <tr>
+      	<td><%= form.id %></td>
+        <td><%= form.nombre %></td>
+        <td><%= form.email %></td>
+        <td><%= form.direccion %></td>
+        <td><%= form.region %></td>
+        <td><%= form.telefono %></td>
+        <td><%= form.comentario %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,39 @@
+<%= form_for(@form, remote: true, html: {id: "formulario"}) do |f| %>
+
+  <div id="form-container">
+    <div class="input-field">
+      <%= f.label :nombre, 'Nombre y Apellido' %> <br>
+      <%= f.text_field :nombre, id: 'form_nombre' %>
+      <div id="error-nombre" class="error"></div>
+    </div>
+    <div class="input-field">
+      <%= f.label :email %><br>
+      <%= f.email_field :email, id: 'form_email' %>
+      <div id="error-email" class="error"></div>
+    </div>
+    <div class="input-field">
+      <%= f.label :telefono, "Teléfono" %><br>
+      <%= f.text_field :telefono %>
+      <div id="error-telefono" class="error"></div>
+    </div>
+    <div class="submit-container">
+      <%= f.submit 'registrate', :class => 'waves-effect waves-light btn submit red'%>
+    </div>    
+  </div>
+  <div id="exito" class="exito opacity">
+    <div class='success light-green darken-2'>
+      <div class="icon-preview col s6 m3 done">
+        <i class="material-icons dp48">thumb_up</i>
+      </div>
+      <p>
+        Inscripción exitosa, te esperamos.
+      </p>
+    </div>
+    <a href='https://www.toolmania.cl' class="waves-effect waves-light btn toolmania amber darken-1">Ir a toolmania</a>
+    <div class='powered'> 
+      <p>powered by nodriza </p>
+      <%= image_tag ('nodriza.png') %>
+    </div>
+  </div>
+<% end %>
+

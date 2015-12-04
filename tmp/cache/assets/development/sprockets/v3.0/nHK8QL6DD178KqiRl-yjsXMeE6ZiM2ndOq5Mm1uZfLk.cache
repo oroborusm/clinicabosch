@@ -1,0 +1,37 @@
+I"Û(function() {
+  $.ajaxSetup({
+    dataType: 'json'
+  });
+
+  $(document).on("ajax:success", "#formulario", function(e, data) {
+    $('#form-container').hide();
+    $('#exito').removeClass('opacity');
+    return $('#exito').addClass('listo');
+  });
+
+  $(document).on("ajax:error", "#formulario", function(ev, data, status, xhr) {
+    console.log(data);
+    if (data.responseJSON.nombre) {
+      $("#error-nombre").html("<p id='flashError'> " + data.responseJSON.nombre + " </p>");
+    } else {
+      $("#error-nombre").html("<p> " + data.done.name + " </p>");
+    }
+    if (data.responseJSON.email) {
+      $("#error-email").html("<p id='flashError'> " + data.responseJSON.email + " </p>");
+    } else {
+      $("#error-email").html("<p> " + data.done.name + " </p>");
+    }
+    if (data.responseJSON.direccion) {
+      $("#error-direccion").html("<p id='flashError'> " + data.responseJSON.direccion + " </p>");
+    } else {
+      $("#error-email").html("<p> " + data.done.name + " </p>");
+    }
+    if (data.responseJSON.region) {
+      return $("#error-region").html("<p id='flashError'> " + data.responseJSON.region + " </p>");
+    } else {
+      return $("#error-region").html("<p> " + data.done.name + " </p>");
+    }
+  });
+
+}).call(this);
+:ET

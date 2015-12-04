@@ -1,0 +1,375 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require materialize
+ *= require_self
+ */
+
+
+*{
+	box-sizing: border-box;
+}
+a:visited{
+	color: initial;
+}
+
+.background-naranjo{
+	background-color: #E66110;
+}
+
+body{
+	background-attachment: fixed;
+	background-image: url("/assets/landing.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.border-red{
+	background: rgba(244, 67, 54, .6) !important;
+	transition: .3s;
+}
+
+.color-naranjo{
+	color: #E66110;
+}
+
+.common{
+	text-align: right;
+}
+.done{
+	text-align: center;
+}
+
+.error p{
+	color: #F44336;
+	font-size: 13px;
+	font-style: italic;
+	margin: 0;
+}
+
+.exito{
+	margin: 0 auto;
+	text-align: right;
+	max-width: 700px;
+}
+	.opacity{
+		opacity: 0;
+		visibility: hidden;
+	}
+	.listo{
+		opacity: 1;
+		visibility: visible;
+	}
+
+form{
+	padding: 20px;
+	width: 100%;
+}
+
+h1{
+	text-align: center;
+}
+header{
+	padding: 0 20px;
+	position: relative;
+	width: 100%;
+}
+	header h1{
+		margin: 0;
+	}
+	header figure{
+		margin: 0;
+		text-align: center;
+	}
+	header figure img{
+		max-width: 500px;
+		width: 100%; 
+	}
+.header-bottom{
+	background: white;
+	border-top: 1px solid #999;
+	bottom: 0;
+	left: 0;
+	padding: 10px;
+	position: fixed;
+	text-align: right;
+	width: 100%;
+	z-index: 2;
+}
+	.header-bottom figure{
+		width: 80px;
+	}
+		.header-bottom figure img{
+			width: 100%;
+		}
+	.header-bottom figure,
+	.header-bottom p{
+		display: inline-block;
+		margin: 0;
+		vertical-align: middle;
+		}
+html, body{
+	height: 100%;
+}
+
+.introduccion{
+	margin: 0 auto;
+	max-width: 700px;
+}
+.introduccion p{
+	font-size: 16px;
+	font-weight: normal;
+	text-align: center;
+}
+.introduccion span{
+	color: #E66110;
+	display:  block;
+	font-weight: 600;
+	width: 100%;
+}
+
+.introduccion ul{
+	text-align: center;
+}
+
+.introduccion li{
+	font-family: 'roboto', sans-serif;
+	font-size: 16px;
+	font-style: italic;
+	font-weight: 3	00;
+}
+/*	.introduccion li:before{
+		background: #E66110;
+		border-radius: 50%;
+		content: '';
+		display: inline-block;
+		height: 10px;
+		margin-right: 10px;
+		width: 10px;
+	}*/
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=password]{
+	background: white;
+	box-sizing: border-box;
+	height: 2.5rem;
+	padding: 5px;
+}
+
+.input-field{
+	margin: 0;
+}
+.input-field label{
+	color: #666;
+	top: 2rem;
+}
+
+.input-field label.active{
+	transform: translateY(-160%);
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime-local],
+input[type=tel], input[type=number],
+input[type=search],
+textarea.materialize-textarea{
+	margin: 0;
+}
+
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #F44336;
+    box-shadow: 0 1px 0 0 #F44336;
+}
+
+input,
+textarea{
+	margin: 0;
+	width: 100%;
+}
+
+
+.link-success{
+	background: #f8b302;
+	color: white;
+	display: block;
+	font-weight: 600;
+	margin: 30px auto;
+	padding: 15px 10px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 300px;
+}
+.menu{
+	position: fixed;
+	text-align: right;
+	top: 15px;
+	width: 100%;
+}
+	.menu a{
+		color: white;
+	}
+.powered{
+	bottom: 0;
+	padding: 10px;
+	text-align: right;
+	width: 95%;
+}
+	.powered img{
+		width:80px;
+	}
+	.powered img,
+	.powered p{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.powered p{
+		font-size: 13px;
+	}
+
+.submit-container{
+	margin-top: 30px;
+	text-align: right;
+}
+
+.success{
+	color: white;
+	font-family: 'roboto', sans-serif;
+	font-weight: 600;
+	padding: 10px 20px;
+	text-transform: uppercase;
+}
+	.success p{
+		margin-top: 0;
+		text-align: center;
+	}
+
+.submit{
+	height: initial;
+	padding: 0;
+}
+
+.submit input{
+	background: none;
+	border: none;
+	padding: 15px 25px;
+	text-align: center;
+}
+
+.tabla{
+	margin: 0 auto 100px auto;
+	max-width: 700px;
+}
+
+table{
+	display: block;
+}
+textarea{
+	background: white;
+	border-bottom: 1px solid #9e9e9e;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	height: 70px;
+}
+th{
+	text-transform: uppercase;
+}
+thead, tbody{
+	width: 100%;
+}
+.titulo{
+	display: block;
+	font-size: 20px;
+	font-weight: 600;
+	margin: 0 auto;
+	text-align: center;
+	text-transform: uppercase;
+	width: 60%;
+}
+.toolmania{
+	color: #999;
+	font-style: italic;
+	font-weight: 400;
+	margin-top: 20px;
+	text-align: center;
+	text-transform: initial;
+}
+
+#form-container{
+	margin: 2em auto;
+}
+
+
+
+@media screen and (min-width: 900px){
+	.submit-container,
+	.input-field{
+		margin-left: 15%;
+		width: 70%;
+	}
+}
+
+
+@media screen and (max-width: 700px){
+	header{
+		position: relative;
+		width: 100%;
+	}
+		header figure{
+			margin-top: 10px;
+		}
+		.introduccion{
+			margin-top: 0;
+		}
+		.header-bottom{
+			position: relative;
+		}
+	form{
+		margin-left: 20%;
+	}
+}
+
+@media screen and (max-width: 550px){
+	form{
+		margin-left: 0;
+		padding: 10px;
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+

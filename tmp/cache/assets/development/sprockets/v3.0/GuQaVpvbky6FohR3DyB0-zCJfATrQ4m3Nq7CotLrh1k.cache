@@ -1,0 +1,41 @@
+I"™(function() {
+  $.ajaxSetup({
+    dataType: 'json'
+  });
+
+  $(document).on("ajax:success", "#formulario", function(e, data) {
+    $('#form-container').hide();
+    $('#exito').removeClass('opacity');
+    return $('#exito').addClass('listo');
+  });
+
+  $(document).on("ajax:error", "#formulario", function(ev, data, status, xhr) {
+    console.log(data);
+    if (data.responseJSON.nombre) {
+      $("#error-nombre").append("<p id='error'> " + data.responseJSON.nombre + " </p>");
+      $("#error").delay(2000).fadeOut("slow");
+    } else {
+      $("#error-nombre").append("<p> " + data.done.name + " </p>");
+    }
+    if (data.responseJSON.email) {
+      $("#error-email").append("<p id='error1'> " + data.responseJSON.email + " </p>");
+      $("#error1").delay(2000).fadeOut("slow");
+    } else {
+      $("#error-email").append("<p> " + data.done.name + " </p>");
+    }
+    if (data.responseJSON.direccion) {
+      $("#error-direccion").append("<p id='error2'> " + data.responseJSON.direccion + " </p>");
+      $("#error2").delay(2000).fadeOut("slow");
+    } else {
+      $("#error-email").append("<p> " + data.done.name + " </p>");
+    }
+    if (data.responseJSON.region) {
+      $("#error-region").append("<p id='error3'> " + data.responseJSON.region + " </p>");
+      return $("#error3").delay(2000).fadeOut("slow");
+    } else {
+      return $("#error-region").append("<p> " + data.done.name + " </p>");
+    }
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clinica Bosch</title>
+  <meta name="description" content="Formluraio de inscripción para evento makita-day organizado por toolmania">
+  <meta name="viewport" content="width=device-width">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+</head>
+<body>
+	<header>
+		<figure>
+			<%= image_tag ("header.png") %>
+		</figure>
+
+		<div class="introduccion">
+			<p>
+				Te invitamos a participar de nuestro primer ciclo de <span>"CLÍNICAS DE HERRAMIENTAS"</span>.
+			</p>
+			<ul>
+				<li><i class="small material-icons color-naranjo">done</i>Partiremos con la linea de medición de nuestros amigos de Boch.</li>
+				<li><i class="small material-icons color-naranjo">done</i>Esta actividad se desarrollará en vivo, con los especialistas en el tema.</li>
+				<li><i class="small material-icons color-naranjo">done</i>Responderemos todas sus dudas en relación a los productos de medición Bosch, mostrar sus particularidades y bondades.</li>
+			</ul>
+		</div>
+
+	</header>
+	<div class="common">
+		<p class="notice"><%= notice %></p>
+	    <p class="alert"><%= alert %></p>
+	</div>
+
+	<%= yield %>
+	<div class="header-bottom">
+		<p>by</p>
+		<figure>
+			<%= image_tag ("toolmania.png") %>
+		</figure>
+		<figure>
+			<%= image_tag ("makita.png") %>
+		</figure>
+	</div>
+
+</body>
+</html>

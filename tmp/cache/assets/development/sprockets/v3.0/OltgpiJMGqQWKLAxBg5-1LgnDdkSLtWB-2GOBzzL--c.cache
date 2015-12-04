@@ -1,0 +1,21 @@
+I"Ý(function() {
+  $.ajaxSetup({
+    dataType: 'json'
+  });
+
+  $(document).on("ajax:success", "#formulario", function(e, data) {
+    $('#form-container').hide();
+    $('#exito').removeClass('opacity');
+    return $('#exito').addClass('listo');
+  });
+
+  $(document).on("ajax:error", "#formulario", function(ev, data, status, xhr) {
+    console.log(data);
+    $("#error-nombre").append("<p id='error'> " + (data.responseJSON.nombre.exists != null) + " </p>");
+    $("#error-email").append("<p> " + (data.responseJSON.email.exists != null) + " </p>");
+    $("#error-direccion").append("<p> " + data.responseJSON.direccion + " </p>");
+    return $("#error-region").append("<p> " + data.responseJSON.region + " </p>");
+  });
+
+}).call(this);
+:ET

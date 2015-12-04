@@ -1,0 +1,25 @@
+I"/(function() {
+  $.ajaxSetup({
+    dataType: 'json'
+  });
+
+  $(document).on("ajax:success", "#formulario", function(e, data) {
+    $('#form-container').hide();
+    $('#exito').removeClass('opacity');
+    return $('#exito').addClass('listo');
+  });
+
+  $(document).on("ajax:error", "#formulario", function(ev, data, status, xhr) {
+    console.log(data);
+    if (data.responseJSON.nombre.exists != null) {
+      $("#error-nombre").append("<p> " + data.responseJSON.nombre + " </p>");
+    } else {
+      $("#error-nombre").append("<p> todo bien </p>");
+    }
+    $("#error-email").append("<p> " + data.responseJSON.email + " </p>");
+    $("#error-direccion").append("<p> " + data.responseJSON.direccion + " </p>");
+    return $("#error-region").append("<p> " + data.responseJSON.region + " </p>");
+  });
+
+}).call(this);
+:ET

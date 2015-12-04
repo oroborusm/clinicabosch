@@ -1,0 +1,31 @@
+I"ù(function() {
+  $.ajaxSetup({
+    dataType: 'json'
+  });
+
+  $(document).on("ajax:success", "#formulario", function(e, data, status, xhr) {
+    console.log(data);
+    $('#form-container').hide();
+    $('#exito').removeClass('opacity');
+    return $('#exito').addClass('listo');
+  });
+
+  $(document).on("ajax:error", "#formulario", function(ev, data, status, xhr) {
+    console.log(data);
+    return $("#error-nombre").append("<p id='error'> " + data.responseJSON.nombre + " </p>");
+  });
+
+  $(document).on("ajax:error", "#formulario", function(ev, data, status, xhr) {
+    return $("#error-email").append("<p> " + data.responseJSON.email + " </p>");
+  });
+
+  $(document).on("ajax:error", "#formulario", function(ev, data, status, xhr) {
+    return $("#error-direccion").append("<p> " + data.responseJSON.direccion + " </p>");
+  });
+
+  $(document).on("ajax:error", "#formulario", function(ev, data, status, xhr) {
+    return $("#error-region").append("<p> " + data.responseJSON.region + " </p>");
+  });
+
+}).call(this);
+:ET
