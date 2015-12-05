@@ -14,6 +14,7 @@ $(document).on "ajax:success", "#formulario",(e, data)->
 	$('#exito').addClass('listo')
 
 $(document).on "ajax:error", "#formulario",(ev, data, status, xhr)->
+	console.log(data)
 	if data.responseJSON.nombre
 		$("#error-nombre").html("<p id='flashError'> #{data.responseJSON.nombre} </p>")
 	else
